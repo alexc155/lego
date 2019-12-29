@@ -1,0 +1,81 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission01",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.r3ptar.Mission01",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission03",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.spik3r.Mission03",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission02",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.spik3r.Mission02",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission01",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.spik3r.Mission01",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SortingTray",
+            "request": "launch",
+            "mainClass": "legomindstorms.nxt.colorsorter.SortingTray",
+            "projectName": "nxt"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Test",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.track3r.Test",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission04",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.track3r.Mission04",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission03",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.track3r.Mission03",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission02",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.track3r.Mission02",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Hello",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.Hello",
+            "projectName": "eve"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission01",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.track3r.Mission01",
+            "projectName": "eve"
+        }
+    ]
+}

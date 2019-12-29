@@ -1,0 +1,34 @@
+package legomindstorms.ev3.track3r;
+
+import java.io.IOException;
+import java.rmi.NotBoundException;
+
+import legomindstorms.ev3.Base;
+import lejos.remote.ev3.RemoteRequestPilot;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
+
+public class Mission02 extends Base {
+
+    public Mission02() throws IOException, NotBoundException {
+        super();
+    }
+
+    public static void main(final String[] args) throws IOException, NotBoundException {
+
+        // countdown();
+        
+        final RemoteRequestPilot pilot = (RemoteRequestPilot) ev3.createPilot(3, 18, "B", "C");
+        final RemoteRequestRegulatedMotor motor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
+        motor.setSpeed((int) (0.75 * motor.getMaxSpeed()));
+        pilot.setLinearSpeed(50);
+        
+        pilot.rotate(-50);
+        motor.rotate(3 * 360);
+        pilot.rotate(100);
+        motor.rotate(6 * 360);
+        pilot.rotate(-50);
+
+        motor.close();
+    }
+    
+}

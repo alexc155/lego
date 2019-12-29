@@ -1,0 +1,50 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build nxt",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/nxt/ && ./${input:nxtmodel}.sh"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/nxt/src/main/java && ", 
+                "find . -name '*.class' -type f -delete && ", 
+                "find . -name '*.nxj' -type f -delete"],
+            "group": "none",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "nxtmodel",
+            "description": "Which Model?",
+            "options": ["test", "ShooterBot", "RoboGator", "ColorSorter"]
+        }
+    ]
+}
