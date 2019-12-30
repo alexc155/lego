@@ -14,19 +14,19 @@ import lejos.robotics.subsumption.Behavior;
 
 public class LocateObjects extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         countdown();
 
-        DifferentialPilot pilot = new DifferentialPilot(3.0f, 14.7f, Motor.B, Motor.C);
+        final DifferentialPilot pilot = new DifferentialPilot(3.0f, 14.7f, Motor.B, Motor.C);
 
-        ColorSensor indicatorLamp = new ColorSensor(SensorPort.S3);
+        final ColorSensor indicatorLamp = new ColorSensor(SensorPort.S3);
 
-        Behavior b1 = new Spin(pilot, indicatorLamp);
-        Behavior b2 = new Shoot(new UltrasonicSensor(SensorPort.S4), indicatorLamp, pilot, MotorPort.A);
+        final Behavior b1 = new Spin(pilot, indicatorLamp);
+        final Behavior b2 = new Shoot(new UltrasonicSensor(SensorPort.S4), indicatorLamp, pilot, MotorPort.A);
 
-        Behavior[] bArray = { b1, b2 };
-        Arbitrator arby = new Arbitrator(bArray);
+        final Behavior[] bArray = { b1, b2 };
+        final Arbitrator arby = new Arbitrator(bArray);
         arby.start();
     }
 }

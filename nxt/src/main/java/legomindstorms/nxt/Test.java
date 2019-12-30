@@ -10,7 +10,7 @@ import lejos.nxt.Sound;
 
 public class Test extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         // countdown();
 
@@ -47,10 +47,10 @@ public class Test extends Base {
 
         // pilot.rotate(90);
 
-        ColorSensor _colorSensor = new ColorSensor(SensorPort.S3);
+        final ColorSensor _colorSensor = new ColorSensor(SensorPort.S3);
         while (Button.readButtons() == 0) {
-            Color _color = _colorSensor.getColor();
-            int _colorVal = _color.getColor();
+            final Color _color = _colorSensor.getColor();
+            final int _colorVal = _color.getColor();
 
             if (_colorVal == Color.RED || _colorVal == Color.GREEN || _colorVal == Color.BLUE
                     || _colorVal == Color.YELLOW) {

@@ -12,15 +12,15 @@ import lejos.robotics.subsumption.Behavior;
 
 public class ColorDetector extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         countdown();
 
-        Behavior b1 = new TiltTable(MotorPort.B, new TouchSensor(SensorPort.S1));
-        Behavior b2 = new ManageBallColor(new ColorSensor(SensorPort.S3), null);
+        final Behavior b1 = new TiltTable(MotorPort.B, new TouchSensor(SensorPort.S1));
+        final Behavior b2 = new ManageBallColor(new ColorSensor(SensorPort.S3), null);
 
-        Behavior[] bArray = { b1, b2 };
-        Arbitrator arby = new Arbitrator(bArray);
+        final Behavior[] bArray = { b1, b2 };
+        final Arbitrator arby = new Arbitrator(bArray);
         arby.start();
 
     }

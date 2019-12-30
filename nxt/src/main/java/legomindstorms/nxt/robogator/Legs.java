@@ -13,18 +13,18 @@ import lejos.robotics.subsumption.Behavior;
 
 public class Legs extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         countdown();
 
-        DifferentialPilot pilot = new DifferentialPilot(3.0f, 14.7f, Motor.B, Motor.C);
+        final DifferentialPilot pilot = new DifferentialPilot(3.0f, 14.7f, Motor.B, Motor.C);
 
-        Behavior b1 = new Stop(pilot);
-        Behavior b2 = new Follow(pilot, new UltrasonicSensor(SensorPort.S4));
-        Behavior b3 = new Bite(100, 80, true);
+        final Behavior b1 = new Stop(pilot);
+        final Behavior b2 = new Follow(pilot, new UltrasonicSensor(SensorPort.S4));
+        final Behavior b3 = new Bite(100, 80, true);
 
-        Behavior[] bArray = { b1, b2, b3 };
-        Arbitrator arby = new Arbitrator(bArray);
+        final Behavior[] bArray = { b1, b2, b3 };
+        final Arbitrator arby = new Arbitrator(bArray);
         arby.start();
 
     }

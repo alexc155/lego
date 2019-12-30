@@ -15,7 +15,7 @@ public class Bite implements Behavior {
     boolean _takeControlWithSensor;
     UltrasonicSensor _ultrasonicSensor;
 
-    public Bite(int bitePower, int biteDelay, boolean takeControlWithSensor) {
+    public Bite(final int bitePower, final int biteDelay, final boolean takeControlWithSensor) {
         _motor = new NXTMotor(MotorPort.A);
         _motor.setPower(bitePower);
         _motor.stop();

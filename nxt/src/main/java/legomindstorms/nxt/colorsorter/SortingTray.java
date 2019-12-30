@@ -15,14 +15,14 @@ import lejos.util.Delay;
 
 public class SortingTray extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         countdown();
 
-        NXTRegulatedMotor tableRegulatedMotor = new NXTRegulatedMotor(MotorPort.B);
-        ColorSensor colorSensor = new ColorSensor(SensorPort.S3);
-        NXTRegulatedMotor trayRegulatedMotor = new NXTRegulatedMotor(MotorPort.C);
-        NXTMotor trayMotor = new NXTMotor(MotorPort.C);
+        final NXTRegulatedMotor tableRegulatedMotor = new NXTRegulatedMotor(MotorPort.B);
+        final ColorSensor colorSensor = new ColorSensor(SensorPort.S3);
+        final NXTRegulatedMotor trayRegulatedMotor = new NXTRegulatedMotor(MotorPort.C);
+        final NXTMotor trayMotor = new NXTMotor(MotorPort.C);
 
         int rotated = -1;
 

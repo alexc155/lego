@@ -9,11 +9,11 @@ import lejos.util.Delay;
 
 public class TiltTable implements Behavior {
     private boolean _suppressed = false;
-    private NXTRegulatedMotor _tableRegulatedMotor;
-    private NXTMotor _tableMotor;
-    private TouchSensor _touchSensor;
+    private final NXTRegulatedMotor _tableRegulatedMotor;
+    private final NXTMotor _tableMotor;
+    private final TouchSensor _touchSensor;
 
-    public TiltTable(MotorPort motorPort, TouchSensor touchSensor) {
+    public TiltTable(final MotorPort motorPort, final TouchSensor touchSensor) {
 
         _touchSensor = touchSensor;
         _tableRegulatedMotor = new NXTRegulatedMotor(motorPort);

@@ -12,14 +12,14 @@ import lejos.util.Delay;
 
 public class Shoot implements Behavior {
     private boolean _suppressed = false;
-    private UltrasonicSensor _ultrasonicSensor;
-    private ColorSensor _attackLamp;
-    private DifferentialPilot _pilot;
-    private NXTRegulatedMotor _shootRegulatedMotor;
-    private NXTMotor _shootMotor;
+    private final UltrasonicSensor _ultrasonicSensor;
+    private final ColorSensor _attackLamp;
+    private final DifferentialPilot _pilot;
+    private final NXTRegulatedMotor _shootRegulatedMotor;
+    private final NXTMotor _shootMotor;
 
-    public Shoot(UltrasonicSensor ultrasonicSensor, ColorSensor attackLamp, DifferentialPilot pilot,
-            MotorPort shooterPort) {
+    public Shoot(final UltrasonicSensor ultrasonicSensor, final ColorSensor attackLamp, final DifferentialPilot pilot,
+            final MotorPort shooterPort) {
         _ultrasonicSensor = ultrasonicSensor;
         _attackLamp = attackLamp;
         _pilot = pilot;

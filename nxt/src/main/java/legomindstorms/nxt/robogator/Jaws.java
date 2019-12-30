@@ -7,14 +7,14 @@ import lejos.robotics.subsumption.Behavior;
 
 public class Jaws extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         countdown();
 
-        Behavior b1 = new Bite(75, 100, false);
+        final Behavior b1 = new Bite(75, 100, false);
 
-        Behavior[] bArray = { b1 };
-        Arbitrator arby = new Arbitrator(bArray);
+        final Behavior[] bArray = { b1 };
+        final Arbitrator arby = new Arbitrator(bArray);
         arby.start();
     }
 }

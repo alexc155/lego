@@ -10,14 +10,14 @@ import lejos.robotics.subsumption.Behavior;
 
 public class Dispenser extends Base {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         countdown();
 
-        Behavior b1 = new TiltTable(MotorPort.B, new TouchSensor(SensorPort.S1));
+        final Behavior b1 = new TiltTable(MotorPort.B, new TouchSensor(SensorPort.S1));
 
-        Behavior[] bArray = { b1 };
-        Arbitrator arby = new Arbitrator(bArray);
+        final Behavior[] bArray = { b1 };
+        final Arbitrator arby = new Arbitrator(bArray);
         arby.start();
 
     }

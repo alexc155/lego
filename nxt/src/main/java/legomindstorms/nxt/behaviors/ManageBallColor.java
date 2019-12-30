@@ -11,7 +11,7 @@ import lejos.nxt.ColorSensor.Color;
 import lejos.robotics.subsumption.Behavior;
 
 public class ManageBallColor implements Behavior {
-    private ColorSensor _colorSensor;
+    private final ColorSensor _colorSensor;
     private Color _color;
     private int _colorVal;
     private boolean _announce;
@@ -19,7 +19,7 @@ public class ManageBallColor implements Behavior {
     private NXTMotor _trayMotor;
     private int _rotated;
 
-    public ManageBallColor(ColorSensor colorSensor, MotorPort trayMotorPort) {
+    public ManageBallColor(final ColorSensor colorSensor, final MotorPort trayMotorPort) {
         _colorSensor = colorSensor;
         _announce = false;
         if (trayMotorPort != null) {

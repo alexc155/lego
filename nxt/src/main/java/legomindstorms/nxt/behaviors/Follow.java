@@ -6,11 +6,11 @@ import lejos.robotics.subsumption.Behavior;
 import lejos.util.Delay;
 
 public class Follow implements Behavior {
-    private DifferentialPilot _pilot;
-    private UltrasonicSensor _ultrasonicSensor;
+    private final DifferentialPilot _pilot;
+    private final UltrasonicSensor _ultrasonicSensor;
     private boolean _supressed;
-    
-    public Follow(DifferentialPilot pilot, UltrasonicSensor ultrasonicSensor) {
+
+    public Follow(final DifferentialPilot pilot, final UltrasonicSensor ultrasonicSensor) {
         _pilot = pilot;
         _ultrasonicSensor = ultrasonicSensor;
         _ultrasonicSensor.capture();

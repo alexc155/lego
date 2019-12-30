@@ -4,9 +4,9 @@ import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.subsumption.Behavior;
 
 public class Stop implements Behavior {
-    private DifferentialPilot _pilot;
+    private final DifferentialPilot _pilot;
 
-    public Stop(DifferentialPilot pilot) {
+    public Stop(final DifferentialPilot pilot) {
         _pilot = pilot;
     }
 

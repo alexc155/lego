@@ -7,10 +7,10 @@ import lejos.robotics.subsumption.Behavior;
 
 public class Spin implements Behavior {
     private boolean _suppressed = false;
-    private DifferentialPilot _pilot;
-    private ColorSensor _guardLamp;
+    private final DifferentialPilot _pilot;
+    private final ColorSensor _guardLamp;
 
-    public Spin(DifferentialPilot pilot, ColorSensor guardLamp) {
+    public Spin(final DifferentialPilot pilot, final ColorSensor guardLamp) {
         _pilot = pilot;
         _guardLamp = guardLamp;
         _pilot.setRotateSpeed(3);

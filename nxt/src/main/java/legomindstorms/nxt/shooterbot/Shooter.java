@@ -14,16 +14,16 @@ import lejos.util.Delay;
 
 public class Shooter extends Base {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(final String[] args) throws InterruptedException {
 
         countdown();
 
         while (Button.readButtons() == 0) {
-            
-            ColorSensor colorSensor = new ColorSensor(SensorPort.S3);
+
+            final ColorSensor colorSensor = new ColorSensor(SensorPort.S3);
             colorSensor.setFloodlight(Color.GREEN);
 
-            DifferentialPilot pilot = new DifferentialPilot(3.0f, 14.7f, Motor.B, Motor.C);
+            final DifferentialPilot pilot = new DifferentialPilot(3.0f, 14.7f, Motor.B, Motor.C);
             pilot.setTravelSpeed(15);
             pilot.travel(3.0f * 3.14 * 3);
             pilot.stop();
@@ -33,8 +33,8 @@ public class Shooter extends Base {
 
             Delay.msDelay(500);
 
-            NXTRegulatedMotor shootRegulatedMotor = new NXTRegulatedMotor(MotorPort.A);
-            NXTMotor shootMotor = new NXTMotor(MotorPort.A);
+            final NXTRegulatedMotor shootRegulatedMotor = new NXTRegulatedMotor(MotorPort.A);
+            final NXTMotor shootMotor = new NXTMotor(MotorPort.A);
 
             shootRegulatedMotor.suspendRegulation();
             shootMotor.setPower(100);
