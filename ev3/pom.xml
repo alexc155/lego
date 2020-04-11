@@ -15,7 +15,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <brick.host>192.168.0.34</brick.host>
+    <brick.host>192.168.0.32</brick.host>
     <brick.home>/home/lejos/programs</brick.home>
     <brick.user>root</brick.user>
     <brick.debug.port>4000</brick.debug.port>

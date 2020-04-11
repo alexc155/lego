@@ -3,17 +3,18 @@ package legomindstorms.ev3.track3r;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 
-import legomindstorms.ev3.Base;
 import legomindstorms.ev3.behaviors.Track3rHammerAttack;
 import legomindstorms.ev3.behaviors.Track3rHammerGuard;
+import lejos.hardware.BrickFinder;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3IRSensor;
+import lejos.remote.ev3.RemoteRequestEV3;
 import lejos.remote.ev3.RemoteRequestPilot;
 import lejos.remote.ev3.RemoteRequestRegulatedMotor;
 import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 
-public class Mission04 extends Base {
+public class Mission04 {
 
     public Mission04() throws IOException, NotBoundException {
         super();
@@ -22,6 +23,8 @@ public class Mission04 extends Base {
     private static final int secondsToRunFor = 30;
 
     public static void main(final String[] args) throws NotBoundException, IOException, InterruptedException {
+
+        final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
 
         final RemoteRequestPilot pilot = (RemoteRequestPilot) ev3.createPilot(3.0, 18.0, "B", "C");
         final RemoteRequestRegulatedMotor motor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');

@@ -1,33 +1,34 @@
 package legomindstorms.ev3.behaviors;
 
-import java.rmi.RemoteException;
-
-import lejos.remote.ev3.RMIRegulatedMotor;
-import lejos.remote.ev3.RMISampleProvider;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
+import lejos.remote.ev3.RemoteRequestSampleProvider;
 import lejos.robotics.subsumption.Behavior;
 
 public class Spik3rAttack implements Behavior {
 
-    private final RMIRegulatedMotor _legsMotor;
-    private final RMIRegulatedMotor _pincerMotor;
-    private final RMIRegulatedMotor _stingMotor;
-    private final RMISampleProvider _irSensor;
+    private final RemoteRequestRegulatedMotor _legsMotor;
+    private final RemoteRequestRegulatedMotor _pincerMotor;
+    private final RemoteRequestRegulatedMotor _stingMotor;
+    private final RemoteRequestSampleProvider _irSensor;
+    private float[] _sample;
 
-    public Spik3rAttack(final RMIRegulatedMotor legsMotor, final RMIRegulatedMotor pincerMotor,
-            final RMIRegulatedMotor stingMotor, final RMISampleProvider irSensor) {
+    public Spik3rAttack(final RemoteRequestRegulatedMotor legsMotor, final RemoteRequestRegulatedMotor pincerMotor,
+            final RemoteRequestRegulatedMotor stingMotor, final RemoteRequestSampleProvider irSensor) {
         _legsMotor = legsMotor;
         _pincerMotor = pincerMotor;
         _stingMotor = stingMotor;
         _irSensor = irSensor;
+        _sample = new float[_irSensor.sampleSize()];
     }
 
     @Override
     public boolean takeControl() {
         try {
-            if (_irSensor.fetchSample()[0] < 40) {
+            _irSensor.fetchSample(_sample, 0);
+            if (_sample[0] < 40) {
                 return true;
             }
-        } catch (final RemoteException e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
         return false;
@@ -49,7 +50,7 @@ public class Spik3rAttack implements Behavior {
             _legsMotor.backward();
 
             _stingMotor.rotate(270);
-        } catch (final RemoteException e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
     }

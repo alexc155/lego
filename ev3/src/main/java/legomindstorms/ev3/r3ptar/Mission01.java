@@ -3,13 +3,11 @@ package legomindstorms.ev3.r3ptar;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 
-import legomindstorms.ev3.Base;
-import legomindstorms.ev3.behaviors.R3ptarSlither;
-import lejos.remote.ev3.RMIRegulatedMotor;
-import lejos.robotics.subsumption.Arbitrator;
-import lejos.robotics.subsumption.Behavior;
+import lejos.hardware.BrickFinder;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
+import lejos.remote.ev3.RemoteRequestEV3;
 
-public class Mission01 extends Base {
+public class Mission01 {
 
     private static final int secondsToRunFor = 20;
 
@@ -19,17 +17,30 @@ public class Mission01 extends Base {
 
     public static void main(final String[] args) throws IOException, NotBoundException {
 
-        final RMIRegulatedMotor legsMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
-        final RMIRegulatedMotor twistMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
+        final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
 
-        final Behavior b1 = new R3ptarSlither(System.currentTimeMillis() + (secondsToRunFor * 1000), legsMotor, twistMotor);
+        final RemoteRequestRegulatedMotor legsMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
+        final RemoteRequestRegulatedMotor twistMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
 
-        final Behavior[] bArray = { b1 };
-        final Arbitrator arby = new Arbitrator(bArray, true);
+        final long millisecondsToRunUntil = System.currentTimeMillis() + (secondsToRunFor * 1000);
 
-        arby.go(); // Carries on (blocking thread) until there are no more actions to take control
+        legsMotor.setSpeed((int) (legsMotor.getMaxSpeed() * 0.75));
+        legsMotor.forward();
 
-        arby.stop();
+        twistMotor.setSpeed((int) (twistMotor.getMaxSpeed() * 0.1));
+        twistMotor.rotate(30);
+
+        while (millisecondsToRunUntil > System.currentTimeMillis()) {
+            try {
+                twistMotor.rotate(-60);
+                twistMotor.rotate(60);
+            } catch (final Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        legsMotor.stop(true);
+        twistMotor.rotate(-30);
 
         legsMotor.close();
         twistMotor.close();

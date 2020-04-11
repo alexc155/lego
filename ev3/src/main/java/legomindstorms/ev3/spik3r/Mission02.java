@@ -3,10 +3,11 @@ package legomindstorms.ev3.spik3r;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 
-import legomindstorms.ev3.Base;
-import lejos.remote.ev3.RMIRegulatedMotor;
+import lejos.hardware.BrickFinder;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
+import lejos.remote.ev3.RemoteRequestEV3;
 
-public class Mission02 extends Base {
+public class Mission02 {
 
     public Mission02() throws IOException, NotBoundException {
         super();
@@ -14,8 +15,10 @@ public class Mission02 extends Base {
 
     public static void main(final String[] args) throws IOException, NotBoundException {
 
-        final RMIRegulatedMotor stingMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("D", 'L');
-        final RMIRegulatedMotor legsMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
+        final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
+
+        final RemoteRequestRegulatedMotor stingMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("D", 'L');
+        final RemoteRequestRegulatedMotor legsMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
 
         stingMotor.setSpeed((int) stingMotor.getMaxSpeed());
         legsMotor.setSpeed((int) legsMotor.getMaxSpeed());

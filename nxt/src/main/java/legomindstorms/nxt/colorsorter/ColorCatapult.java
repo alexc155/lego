@@ -10,7 +10,7 @@ import lejos.nxt.NXTRegulatedMotor;
 import lejos.nxt.SensorPort;
 import lejos.util.Delay;
 
-public class Catapult extends Base {
+public class ColorCatapult extends Base {
 
     public static void main(final String[] args) {
 
@@ -44,28 +44,28 @@ public class Catapult extends Base {
 
             if (rotated == -1) {
                 switch (colorVal) {
-                case Color.RED:
-                    Delay.msDelay(1000);
-                    trayRegulatedMotor.rotate(-60);
-                    rotated = -60;
-                    break;
-                case Color.GREEN:
-                    Delay.msDelay(1000);
-                    trayRegulatedMotor.rotate(-30);
-                    rotated = -30;
-                    break;
-                case Color.BLUE:
-                    Delay.msDelay(1000);
-                    trayRegulatedMotor.rotate(30);
-                    rotated = 30;
-                    break;
-                case Color.YELLOW:
-                    Delay.msDelay(1000);
-                    trayRegulatedMotor.rotate(60);
-                    rotated = 60;
-                    break;
-                case Color.WHITE:
-                    break;
+                    case Color.RED:
+                        Delay.msDelay(1000);
+                        trayRegulatedMotor.rotate(-60);
+                        rotated = -60;
+                        break;
+                    case Color.GREEN:
+                        Delay.msDelay(1000);
+                        trayRegulatedMotor.rotate(-30);
+                        rotated = -30;
+                        break;
+                    case Color.BLUE:
+                        Delay.msDelay(1000);
+                        trayRegulatedMotor.rotate(30);
+                        rotated = 30;
+                        break;
+                    case Color.YELLOW:
+                        Delay.msDelay(1000);
+                        trayRegulatedMotor.rotate(60);
+                        rotated = 60;
+                        break;
+                    case Color.WHITE:
+                        break;
                 }
                 if (rotated != -1) {
                     catapultRegulatedMotor.rotate(120);

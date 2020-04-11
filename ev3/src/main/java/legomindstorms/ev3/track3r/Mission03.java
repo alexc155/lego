@@ -3,12 +3,13 @@ package legomindstorms.ev3.track3r;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 
-import legomindstorms.ev3.Base;
+import lejos.hardware.BrickFinder;
+import lejos.remote.ev3.RemoteRequestEV3;
 import lejos.remote.ev3.RemoteRequestPilot;
 import lejos.remote.ev3.RemoteRequestRegulatedMotor;
 import lejos.utility.Delay;
 
-public class Mission03 extends Base {
+public class Mission03 {
 
     public Mission03() throws IOException, NotBoundException {
         super();
@@ -16,7 +17,7 @@ public class Mission03 extends Base {
 
     public static void main(final String[] args) throws IOException, NotBoundException {
 
-        // countdown();
+        final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
 
         final RemoteRequestPilot pilot = (RemoteRequestPilot) ev3.createPilot(3.0, 18.0, "B", "C");
         final RemoteRequestRegulatedMotor motor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');

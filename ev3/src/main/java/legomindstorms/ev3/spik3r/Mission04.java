@@ -3,15 +3,16 @@ package legomindstorms.ev3.spik3r;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 
-import legomindstorms.ev3.Base;
 import legomindstorms.ev3.behaviors.Spik3rPatrol;
 import legomindstorms.ev3.behaviors.Spik3rAttack;
-import lejos.remote.ev3.RMIRegulatedMotor;
-import lejos.remote.ev3.RMISampleProvider;
+import lejos.hardware.BrickFinder;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
+import lejos.remote.ev3.RemoteRequestSampleProvider;
+import lejos.remote.ev3.RemoteRequestEV3;
 import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 
-public class Mission04 extends Base {
+public class Mission04 {
 
     private static final int secondsToRunFor = 20;
 
@@ -21,10 +22,12 @@ public class Mission04 extends Base {
 
     public static void main(final String[] args) throws IOException, NotBoundException {
 
-        final RMIRegulatedMotor pincerMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
-        final RMIRegulatedMotor legsMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
-        final RMIRegulatedMotor stingMotor = (RMIRegulatedMotor) ev3.createRegulatedMotor("D", 'L');
-        final RMISampleProvider irSensor = (RMISampleProvider) ev3.createSampleProvider("S4",
+        final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
+
+        final RemoteRequestRegulatedMotor pincerMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
+        final RemoteRequestRegulatedMotor legsMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
+        final RemoteRequestRegulatedMotor stingMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("D", 'L');
+        final RemoteRequestSampleProvider irSensor = (RemoteRequestSampleProvider) ev3.createSampleProvider("S4",
                 "lejos.hardware.sensor.EV3UltrasonicSensor", "distance");
 
         pincerMotor.setSpeed((int) (pincerMotor.getMaxSpeed() / 2));

@@ -1,17 +1,15 @@
 package legomindstorms.ev3.behaviors;
 
-import java.rmi.RemoteException;
-
-import lejos.remote.ev3.RMIRegulatedMotor;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
 import lejos.robotics.subsumption.Behavior;
 
 public class Spik3rPatrol implements Behavior {
 
     private boolean _suppressed;
     private final long _millisecondsToRunUntil;
-    private final RMIRegulatedMotor _legsMotor;
+    private final RemoteRequestRegulatedMotor _legsMotor;
 
-    public Spik3rPatrol(final long millisecondsToRunUntil, final RMIRegulatedMotor legsMotor) {
+    public Spik3rPatrol(final long millisecondsToRunUntil, final RemoteRequestRegulatedMotor legsMotor) {
         _millisecondsToRunUntil = millisecondsToRunUntil;
         _legsMotor = legsMotor;
     }
@@ -32,7 +30,7 @@ public class Spik3rPatrol implements Behavior {
             try {
                 _legsMotor.rotate(3 * 360);
                 _legsMotor.rotate(-2 * 360);
-            } catch (final RemoteException e) {
+            } catch (final Exception e) {
                 e.printStackTrace();
                 suppress();
             }

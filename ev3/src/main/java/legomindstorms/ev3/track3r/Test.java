@@ -3,6 +3,7 @@ package legomindstorms.ev3.track3r;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 
+import lejos.hardware.BrickFinder;
 import lejos.hardware.Sound;
 import lejos.hardware.lcd.GraphicsLCD;
 import lejos.remote.ev3.RemoteRequestEV3;
@@ -11,7 +12,7 @@ public class Test {
 
     public static void main(final String[] args) throws NotBoundException, IOException {
 
-        final RemoteRequestEV3 ev3 = new RemoteRequestEV3("192.168.0.34");
+        final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
         final GraphicsLCD graphicsLCD = ev3.getGraphicsLCD();
         Sound.beep();
         graphicsLCD.drawString("str", 0, 0, 0);

@@ -1,19 +1,19 @@
 package legomindstorms.ev3.behaviors;
 
-import java.rmi.RemoteException;
-
-import lejos.remote.ev3.RMIRegulatedMotor;
+import lejos.remote.ev3.RemoteRequestRegulatedMotor;
 import lejos.robotics.subsumption.Behavior;
 
-public class R3ptarTwist implements Behavior {
+public class R3ptarTwist extends Thread implements Behavior {
 
     private boolean _suppressed;
     private final long _millisecondsToRunUntil;
-    private final RMIRegulatedMotor _twistMotor;
+    private final RemoteRequestRegulatedMotor _twistMotor;
 
-    public R3ptarTwist(final long millisecondsToRunUntil, final RMIRegulatedMotor twistMotor) {
+    public R3ptarTwist(final long millisecondsToRunUntil, final RemoteRequestRegulatedMotor twistMotor) {
         _millisecondsToRunUntil = millisecondsToRunUntil;
         _twistMotor = twistMotor;
+        _twistMotor.setSpeed((int) (_twistMotor.getMaxSpeed() * 0.2));
+        _suppressed = false;
     }
 
     @Override
@@ -29,14 +29,11 @@ public class R3ptarTwist implements Behavior {
     @Override
     public void action() {
         try {
-            _twistMotor.setSpeed((int) (_twistMotor.getMaxSpeed() * 0.1));
-            _twistMotor.rotate(30);
-
             while (!_suppressed && System.currentTimeMillis() < _millisecondsToRunUntil) {
-                _twistMotor.rotate(-60);
-                _twistMotor.rotate(60);
+                _twistMotor.rotate(-80);
+                _twistMotor.rotate(80);
             }
-        } catch (final RemoteException e) {
+        } catch (final Exception e) {
             e.printStackTrace();
             suppress();
         }
@@ -46,10 +43,13 @@ public class R3ptarTwist implements Behavior {
     @Override
     public void suppress() {
         try {
-            _twistMotor.rotate(-30);
-        } catch (final RemoteException e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
         _suppressed = true;
+    }
+
+    public void run() {
+        action();
     }
 }

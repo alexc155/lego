@@ -23,9 +23,9 @@ find . -name '*.nxj' -type f -delete
 /Applications/leJOS_NXJ/bin/nxjlink -o legomindstorms/nxt/SortingTray.nxj legomindstorms.nxt.colorsorter.SortingTray
 /Applications/leJOS_NXJ/bin/nxjupload legomindstorms/nxt/SortingTray.nxj
 
-/Applications/leJOS_NXJ/bin/nxjc legomindstorms/nxt/Base.java legomindstorms/nxt/behaviors/*.java legomindstorms/nxt/colorsorter/Catapult.java
-/Applications/leJOS_NXJ/bin/nxjlink -o legomindstorms/nxt/Catapult.nxj legomindstorms.nxt.colorsorter.Catapult
-/Applications/leJOS_NXJ/bin/nxjupload legomindstorms/nxt/Catapult.nxj
+/Applications/leJOS_NXJ/bin/nxjc legomindstorms/nxt/Base.java legomindstorms/nxt/behaviors/*.java legomindstorms/nxt/colorsorter/ColorCatapult.java
+/Applications/leJOS_NXJ/bin/nxjlink -o legomindstorms/nxt/ColorCatapult.nxj legomindstorms.nxt.colorsorter.ColorCatapult
+/Applications/leJOS_NXJ/bin/nxjupload legomindstorms/nxt/ColorCatapult.nxj
 
 find . -name '*.class' -type f -delete
 find . -name '*.nxj' -type f -delete
