@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Mission03",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.gripp3r.Mission03",
+            "projectName": "ev3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission02",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.gripp3r.Mission02",
+            "projectName": "ev3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Mission01",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.gripp3r.Mission01",
+            "projectName": "ev3"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Hello",
             "request": "launch",
             "mainClass": "legomindstorms.ev3.Hello",

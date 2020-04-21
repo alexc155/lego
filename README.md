@@ -23,6 +23,7 @@ Done so far:
 - Alpha Rex
     - Legs
     - Arms
+    - Head
 
 ## ev3
 
@@ -37,6 +38,10 @@ Done so far:
     - Mission 03
     - Mission 04
 - R3ptar
+    - Mission 01
+    - Mission 02
+    - Mission 03
+- Gripp3r
     - Mission 01
     - Mission 02
     - Mission 03

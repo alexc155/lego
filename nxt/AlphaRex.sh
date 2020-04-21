@@ -13,5 +13,9 @@ find . -name '*.nxj' -type f -delete
 /Applications/leJOS_NXJ/bin/nxjlink -o legomindstorms/nxt/Arms.nxj legomindstorms.nxt.alpharex.Arms
 /Applications/leJOS_NXJ/bin/nxjupload legomindstorms/nxt/Arms.nxj
 
+/Applications/leJOS_NXJ/bin/nxjc legomindstorms/nxt/Base.java legomindstorms/nxt/alpharex/Head.java
+/Applications/leJOS_NXJ/bin/nxjlink -o legomindstorms/nxt/Head.nxj legomindstorms.nxt.alpharex.Head
+/Applications/leJOS_NXJ/bin/nxjupload legomindstorms/nxt/Head.nxj
+
 find . -name '*.class' -type f -delete
 find . -name '*.nxj' -type f -delete
