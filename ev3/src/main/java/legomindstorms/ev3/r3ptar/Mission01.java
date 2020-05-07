@@ -44,5 +44,7 @@ public class Mission01 {
 
         legsMotor.close();
         twistMotor.close();
+
+        System.exit(0);
     }
 }

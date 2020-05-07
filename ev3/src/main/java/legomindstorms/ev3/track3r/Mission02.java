@@ -17,12 +17,12 @@ public class Mission02 {
     public static void main(final String[] args) throws IOException, NotBoundException {
 
         final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
-        
+
         final RemoteRequestPilot pilot = (RemoteRequestPilot) ev3.createPilot(3, 18, "B", "C");
         final RemoteRequestRegulatedMotor motor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
         motor.setSpeed((int) (0.75 * motor.getMaxSpeed()));
         pilot.setLinearSpeed(50);
-        
+
         pilot.rotate(-50);
         motor.rotate(3 * 360);
         pilot.rotate(100);
@@ -30,6 +30,9 @@ public class Mission02 {
         pilot.rotate(-50);
 
         motor.close();
+        pilot.close();
+
+        System.exit(0);
     }
-    
+
 }

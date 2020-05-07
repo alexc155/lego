@@ -17,7 +17,8 @@ public class Mission03 {
 
         final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
 
-        final RemoteRequestRegulatedMotor pincerMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
+        final RemoteRequestRegulatedMotor pincerMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A",
+                'M');
         final RemoteRequestRegulatedMotor legsMotor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("B", 'L');
 
         pincerMotor.setSpeed((int) (pincerMotor.getMaxSpeed() / 3));
@@ -44,5 +45,7 @@ public class Mission03 {
 
         pincerMotor.close();
         legsMotor.close();
+
+        System.exit(0);
     }
 }

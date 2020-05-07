@@ -28,5 +28,7 @@ public class Mission02 {
 
         gripMotor.close();
         pilot.close();
+
+        System.exit(0);
     }
 }

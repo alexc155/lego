@@ -25,5 +25,7 @@ public class Mission01 {
         motor.rotate(-120);
 
         motor.close();
+
+        System.exit(0);
     }
 }

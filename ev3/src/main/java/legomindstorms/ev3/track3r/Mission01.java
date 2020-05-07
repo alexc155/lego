@@ -29,7 +29,11 @@ public class Mission01 {
         pilot.travel(-2 * 3.0f * 3.14159); // move backward for 2 revolutions
 
         pilot.stop();
+
         motor.close();
+        pilot.close();
+
+        System.exit(0);
     }
 
 }

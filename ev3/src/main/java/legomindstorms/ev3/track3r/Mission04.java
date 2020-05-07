@@ -41,5 +41,9 @@ public class Mission04 {
 
         arby.stop();
         irSensor.close();
+        motor.close();
+        pilot.close();
+
+        System.exit(0);
     }
 }

@@ -21,7 +21,7 @@ public class Mission03 {
 
         final RemoteRequestPilot pilot = (RemoteRequestPilot) ev3.createPilot(3.0, 18.0, "B", "C");
         final RemoteRequestRegulatedMotor motor = (RemoteRequestRegulatedMotor) ev3.createRegulatedMotor("A", 'M');
-        
+
         pilot.setLinearSpeed((0.5 * pilot.getMaxLinearSpeed()));
         motor.setSpeed((int) (0.75 * motor.getMaxSpeed()));
         motor.backward();
@@ -35,11 +35,14 @@ public class Mission03 {
             Delay.msDelay(500);
             pilot.travelArc(20, -3 * 3.0 * 3.14159);
         }
-        
+
         motor.forward();
         pilot.travel(-6 * 3.0 * 3.14159);
 
         motor.close();
+        pilot.close();
+
+        System.exit(0);
     }
-    
+
 }

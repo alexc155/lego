@@ -68,6 +68,7 @@ public class Mission03 {
         jawsMotor.close();
         slitherMotor.close();
         eyesSensor.close();
+
         System.exit(0);
     }
 }

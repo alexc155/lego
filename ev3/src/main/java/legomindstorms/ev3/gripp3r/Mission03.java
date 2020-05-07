@@ -43,5 +43,7 @@ public class Mission03 {
         eyesSensor.close();
         pilot.close();
         gripMotor.close();
+
+        System.exit(0);
     }
 }

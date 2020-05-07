@@ -40,6 +40,7 @@ public class Mission02 {
         twistMotor.close();
         jawsMotor.close();
         eyesSensor.close();
+
         System.exit(0);
     }
 }

@@ -33,5 +33,7 @@ public class Mission02 {
 
         stingMotor.close();
         legsMotor.close();
+
+        System.exit(0);
     }
 }
