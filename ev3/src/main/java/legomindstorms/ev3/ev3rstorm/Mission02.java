@@ -13,9 +13,9 @@ public class Mission02 {
 
     public static void main(String[] args) throws IOException {
 
-        final long millisecondsToRunUntil = System.currentTimeMillis() + (secondsToRunFor * 1000);
-
         final RemoteRequestEV3 ev3 = new RemoteRequestEV3(BrickFinder.find("EV3")[0].getIPAddress());
+
+        final long millisecondsToRunUntil = System.currentTimeMillis() + (secondsToRunFor * 1000);
 
         final RemoteRequestPilot pilot = (RemoteRequestPilot) ev3.createPilot(3, 12.8, "B", "C");
         pilot.setLinearSpeed(20); // cm per second
@@ -26,14 +26,14 @@ public class Mission02 {
         touchSensor.fetchSample(sample, 0);
 
         while (millisecondsToRunUntil > System.currentTimeMillis()) {
-            while (sample[0] != 1) {
+            while (sample[0] != 1 && millisecondsToRunUntil > System.currentTimeMillis()) {
                 touchSensor.fetchSample(sample, 0);
             }
-            while (sample[0] != 0) {
+            while (sample[0] != 0 && millisecondsToRunUntil > System.currentTimeMillis()) {
                 touchSensor.fetchSample(sample, 0);
             }
-            pilot.travelArc(100, 100);
-            pilot.travelArc(-100, 100);
+            pilot.rotate(100);
+            pilot.rotate(-100);
         }
 
         touchSensor.close();
