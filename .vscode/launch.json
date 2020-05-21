@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Mission03",
+            "request": "launch",
+            "mainClass": "legomindstorms.ev3.ev3rstorm.Mission03",
+            "projectName": "ev3"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Mission02",
             "request": "launch",
             "mainClass": "legomindstorms.ev3.ev3rstorm.Mission02",
