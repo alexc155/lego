@@ -1,9 +1,9 @@
 # lego
-Mindstorms ev3 &amp; nxt lejos robots
+Mindstorms ev3 &amp; nxt compiled & lejos robots
 
-Done so far:
+## Lejos
 
-## nxt
+### nxt
 
 - Shooterbot
     - Driving base
@@ -25,7 +25,7 @@ Done so far:
     - Arms
     - Head
 
-## ev3
+### ev3
 
 - Track3r
     - Mission 01
@@ -47,5 +47,16 @@ Done so far:
     - Mission 03
 - Ev3rstorm
     - Mission 01
-    - Mission 02 (WIP)
-    - Mission 03 (WIP)
+    - Mission 02
+    - Mission 03
+    - Mission 04
+
+## Compiled
+
+### nxt
+
+- Mindcuber
+
+### ev3
+
+- Mindcub3r
