@@ -7,7 +7,7 @@
             "label": "build nxt",
             "type": "shell",
             "command": [
-                "cd ${workspaceFolder}/nxt/ && ./${input:nxtmodel}.sh"
+                "cd ${workspaceFolder}/lejos/nxt/ && ./${input:nxtmodel}.sh"
             ],
             "group": "build",
             "presentation": {
@@ -21,13 +21,47 @@
             "problemMatcher": []
         },
         {
-            "label": "clean",
+            "label": "build ev3",
             "type": "shell",
             "command": [
-                "cd ${workspaceFolder}/nxt/src/main/java && ", 
+                "cd ${workspaceFolder}/lejos/ev3/ && ./BuildAndDeploy.sh legomindstorms.ev3.${input:ev3model}.${input:ev3mission}"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "clean nxt",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/lejos/nxt/src/main/java && ", 
                 "find . -name '*.class' -type f -delete && ", 
                 "find . -name '*.nxj' -type f -delete"],
             "group": "none",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "clean ev3",
+            "type": "shell",
+            "command": [
+                "cd ${workspaceFolder}/lejos/ev3/ && ./Clean.sh"
+            ],
+            "group": "build",
             "presentation": {
                 "echo": true,
                 "reveal": "always",
@@ -41,10 +75,22 @@
     ],
     "inputs": [
         {
-            "type": "pickString",
             "id": "nxtmodel",
+            "type": "pickString",
             "description": "Which Model?",
             "options": ["test", "ShooterBot", "RoboGator", "ColorSorter", "AlphaRex"]
+        },
+        {
+            "id": "ev3model",
+            "type": "pickString",
+            "description": "Which Model?",
+            "options": ["track3r", "spik3r", "r3ptar", "gripp3r", "ev3rstorm"]
+        },
+        {
+            "id": "ev3mission",
+            "type": "pickString",
+            "description": "Which Mission?",
+            "options": ["Mission01", "Mission02", "Mission03", "Mission04"]
         }
     ]
 }
