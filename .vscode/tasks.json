@@ -90,7 +90,7 @@
             "id": "ev3mission",
             "type": "pickString",
             "description": "Which Mission?",
-            "options": ["Mission01", "Mission02", "Mission03", "Mission04"]
+            "options": ["Mission01", "Mission02", "Mission03", "Mission04", "Mission04a"]
         }
     ]
 }

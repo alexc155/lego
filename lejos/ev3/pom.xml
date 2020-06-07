@@ -12,8 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
 
     <brick.host>192.168.0.32</brick.host>
     <brick.home>/home/lejos/programs</brick.home>
@@ -61,12 +61,6 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
-          <configuration>
-            <verbose>true</verbose>
-            <fork>true</fork>
-            <executable>/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/bin/javac</executable>
-            <compilerVersion>1.8</compilerVersion>
-          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
