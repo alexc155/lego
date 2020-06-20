@@ -24,7 +24,7 @@
             "label": "build ev3",
             "type": "shell",
             "command": [
-                "cd ${workspaceFolder}/lejos/ev3/ && ./BuildAndDeploy.sh legomindstorms.ev3.${input:ev3model}.${input:ev3mission}"
+                "cd ${workspaceFolder}/lejos/ev3/ && ./BuildAndDeploy.sh ${input:ev3model} ${input:ev3mission}"
             ],
             "group": "build",
             "presentation": {
@@ -59,7 +59,7 @@
             "label": "clean ev3",
             "type": "shell",
             "command": [
-                "cd ${workspaceFolder}/lejos/ev3/ && ./Clean.sh"
+                "cd ${workspaceFolder}/lejos/ev3/ && ./Clean.sh ${input:ev3model}"
             ],
             "group": "build",
             "presentation": {
@@ -90,7 +90,7 @@
             "id": "ev3mission",
             "type": "pickString",
             "description": "Which Mission?",
-            "options": ["Mission01", "Mission02", "Mission03", "Mission04", "Mission04a"]
+            "options": ["Mission01", "Mission02", "Mission03", "Mission04"]
         }
     ]
 }

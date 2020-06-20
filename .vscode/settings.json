@@ -1,5 +1,24 @@
 {
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.dependency.syncWithFolderExplorer": true,
-    "java.dependency.packagePresentation": "hierarchical"
+    "java.dependency.packagePresentation": "hierarchical",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#8cd0b3",
+        "activityBar.activeBorder": "#9661be",
+        "activityBar.background": "#8cd0b3",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#9661be",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "statusBar.background": "#68c19b",
+        "statusBar.border": "#68c19b",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#48ae82",
+        "titleBar.activeBackground": "#68c19b",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.border": "#68c19b",
+        "titleBar.inactiveBackground": "#68c19b99",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#68c19b"
 }

@@ -1,3 +1,5 @@
-cd ..
+cd $1
 
-mvn clean -f "/Users/aclark/Documents/GitHub.nosync/lego/lejos/ev3/pom.xml"
+mvn clean -f "./pom.xml"
+
+cd ..
